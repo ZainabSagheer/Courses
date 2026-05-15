@@ -1,4 +1,8 @@
 import * as ftp from "basic-ftp";
+import "dotenv/config";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env.local" });
 
 async function deploy() {
     const client = new ftp.Client();
@@ -19,8 +23,8 @@ async function deploy() {
             host,
             user,
             password,
-            secure: true,
-            secureOptions: { rejectUnauthorized: false }
+            port: 21,
+            secure: false
         });
 
         console.log("Successfully connected!");
