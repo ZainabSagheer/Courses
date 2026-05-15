@@ -27,11 +27,15 @@
 # debug
 npm-debug.log*
 yarn-debug.log*
+yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+dev.log
+*.log
 
-# env files (can opt-in for committing if needed)
+# env files — copy .env.example and fill in your values
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +43,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# zip archives
+*.zip
+
+# FTP test utility
+test_ftp.mjs
+
+# ide
+.claude/
+.gemini/

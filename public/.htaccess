@@ -1,0 +1,14 @@
+Options -Indexes
+
+RewriteEngine On
+
+# If the request is a directory, serve index.html
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# If the request is for a path, and path.html exists, serve path.html
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Handle 404 errors
+ErrorDocument 404 /404.html
